@@ -4,19 +4,165 @@ import 'package:personality_quiz/chat/commonRoom.dart';
 class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    int crossAxisCount = MediaQuery.of(context).size.width > 600 ? 3 : 2;
+
     return Scaffold(
       appBar: AppBar(
-        title: Text('Main Screen'),
+        title: Text('Myntra'),
+        backgroundColor: Colors.pink,
       ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            _showDialog(context);
-          },
-          child: Text('Press Me'),
+      body: GridView.builder(
+        padding: EdgeInsets.all(10),
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: crossAxisCount,
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
+          childAspectRatio: 0.7,
+        ),
+        itemCount: 8,
+        itemBuilder: (context, index) {
+          return Card(
+            elevation: 5,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(15),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Image.network(
+                  getImagePath(index),
+                  fit: BoxFit.cover,
+                  height: 150,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    getTitle(index),
+                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: Text(
+                    getSubtitle(index),
+                    style: TextStyle(fontSize: 12, color: Colors.grey),
+                  ),
+                ),
+                Spacer(),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Center(
+                    child: ElevatedButton(
+                      onPressed: () {
+                        // Action when "Shop Now" button is pressed
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.pink,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                      ),
+                      child: Text(
+                        'Shop Now',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ),
+                )
+              ],
+            ),
+          );
+        },
+      ),
+      bottomNavigationBar: BottomAppBar(
+        shape: CircularNotchedRectangle(),
+        color: const Color.fromARGB(255, 227, 138, 168),
+        notchMargin: 8.0,
+        child: Container(
+          height: 60.0,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              ElevatedButton(
+                onPressed: () {
+                  _showDialog(context);
+                },
+                child: Text('Shop Together'),
+              ),
+            ],
+          ),
         ),
       ),
     );
+  }
+
+  String getImagePath(int index) {
+    switch (index) {
+      case 0:
+        return 'assets/Images/shopping.webp';
+      case 1:
+        return 'assets/Images/shopping1.webp';
+      case 2:
+        return 'assets/Images/shopping2.webp';
+      case 3:
+        return 'assets/Images/shopping3.webp';
+      case 4:
+        return 'assets/Images/shopping4.webp';
+      case 5:
+        return 'assets/Images/shopping5.webp';
+      case 6:
+        return 'assets/Images/shopping6.webp';
+      case 7:
+        return 'assets/Images/shopping7.webp';
+      default:
+        return '';
+    }
+  }
+
+  String getTitle(int index) {
+    switch (index) {
+      case 0:
+        return 'Set of 2-Black Sweetheart Neck Crop Top With High Rise Trouser for women';
+      case 1:
+        return 'Asymmetrical Floral Printed Co-Ord Set for women';
+      case 2:
+        return 'PINACOLADA Fringe Top With Skirt Co-Ords (M) by Myntra';
+      case 3:
+        return 'Srk Collection Women Two Piece Dress Pink Dress';
+      case 4:
+        return 'Set of 2-Black Sweetheart Neck Crop Top With High Rise Trouser for women';
+      case 5:
+        return 'Asymmetrical Floral Printed Co-Ord Set for women';
+      case 6:
+        return 'PINACOLADA Fringe Top With Skirt Co-Ords (M) by Myntra';
+      case 7:
+        return 'Srk Collection Women Two Piece Dress Pink Dress';
+      default:
+        return '';
+    }
+  }
+
+  String getSubtitle(int index) {
+    switch (index) {
+      case 0:
+        return '₹899.00\nFree delivery';
+      case 1:
+        return '₹999.00\nFree delivery';
+      case 2:
+        return '₹1,049.00\n₹79.00 delivery';
+      case 3:
+        return '₹899.00\nFree delivery';
+      case 4:
+        return '₹899.00\nFree delivery';
+      case 5:
+        return '₹999.00\nFree delivery';
+      case 6:
+        return '₹1,049.00\n₹79.00 delivery';
+      case 7:
+        return '₹899.00\nFree delivery';
+      default:
+        return '';
+    }
   }
 }
 
