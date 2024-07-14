@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:personality_quiz/option2/option22/option221/screen.dart';
-import 'package:personality_quiz/option2/option22/option222/screen.dart';
+import 'package:personality_quiz/quiz/option1/screen.dart';
+import 'package:personality_quiz/quiz/option2/screen.dart';
 
-class Option22Screen extends StatelessWidget {
-  const Option22Screen({super.key});
+class FashionPersonalityQuiz extends StatefulWidget {
+  const FashionPersonalityQuiz({super.key});
 
+  @override
+  State<FashionPersonalityQuiz> createState() => _FashionPersonalityQuizState();
+}
+
+class _FashionPersonalityQuizState extends State<FashionPersonalityQuiz> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,30 +39,26 @@ class Option22Screen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 InkWell(
-                  onTap: () => Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => Option221Screen())),
+                  onTap: () => Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: (context) => Option1Screen())),
                   child: Container(
                     decoration: BoxDecoration(
                         border: Border.all(color: Colors.pink, width: 6)),
                     width: 200, // Ensure the container has a width
                     height: 200, // Ensure the container has a height
-                    child: Image.asset("assets/fashion4.jpg"),
+                    child: Image.asset("assets/fashion.jpg"),
                   ),
                 ),
 
                 InkWell(
-                  onTap: () => Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => Option222Screen())),
+                  onTap: () => Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: (context) => Option2Screen())),
                   child: Container(
                     decoration: BoxDecoration(
                         border: Border.all(color: Colors.pink, width: 6)),
                     width: 200, // Ensure the container has a width
                     height: 200, // Ensure the container has a height
-                    child: Image.asset("assets/fashion5.jpg"),
+                    child: Image.asset("assets/fashion2.jpg"),
                   ),
                 ),
 

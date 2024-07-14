@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:personality_quiz/option2/option21/option211/screen.dart';
-import 'package:personality_quiz/option2/option21/option212/screen.dart';
+import 'package:personality_quiz/quiz/option2/option21/option211/screen.dart';
+import 'package:personality_quiz/quiz/option2/option21/option212/screen.dart';
 
 class Option21Screen extends StatelessWidget {
   const Option21Screen({super.key});

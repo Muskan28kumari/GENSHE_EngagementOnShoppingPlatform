@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:personality_quiz/option1/option12/option121/screen.dart';
-import 'package:personality_quiz/option1/option12/option122/screen.dart';
+import 'package:personality_quiz/quiz/option2/option21/screen.dart';
+import 'package:personality_quiz/quiz/option2/option22/screen.dart';
 
-class Option12Screen extends StatelessWidget {
-  const Option12Screen({super.key});
+class Option2Screen extends StatelessWidget {
+  const Option2Screen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +37,7 @@ class Option12Screen extends StatelessWidget {
                   onTap: () => Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => Option121Screen())),
+                          builder: (context) => Option21Screen())),
                   child: Container(
                     decoration: BoxDecoration(
                         border: Border.all(color: Colors.pink, width: 6)),
@@ -51,7 +51,7 @@ class Option12Screen extends StatelessWidget {
                   onTap: () => Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => Option122Screen())),
+                          builder: (context) => Option22Screen())),
                   child: Container(
                     decoration: BoxDecoration(
                         border: Border.all(color: Colors.pink, width: 6)),

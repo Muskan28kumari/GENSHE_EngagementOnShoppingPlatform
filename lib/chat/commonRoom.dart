@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:personality_quiz/Access/accessscreen.dart';
 
 class CommonRoomScreen extends StatelessWidget {
   final List<String> emails;
@@ -35,6 +36,10 @@ class CommonRoomScreen extends StatelessWidget {
                     InkWell(
                       onTap: () {
                         // Action when the link is tapped
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Collaborative()));
                       },
                       child: Text(
                         "https://link",

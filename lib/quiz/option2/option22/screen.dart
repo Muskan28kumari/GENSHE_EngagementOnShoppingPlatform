@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:personality_quiz/option2/option21/screen.dart';
-import 'package:personality_quiz/option2/option22/screen.dart';
+import 'package:personality_quiz/quiz/option2/option22/option221/screen.dart';
+import 'package:personality_quiz/quiz/option2/option22/option222/screen.dart';
 
-class Option2Screen extends StatelessWidget {
-  const Option2Screen({super.key});
+class Option22Screen extends StatelessWidget {
+  const Option22Screen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -37,13 +37,13 @@ class Option2Screen extends StatelessWidget {
                   onTap: () => Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => Option21Screen())),
+                          builder: (context) => Option221Screen())),
                   child: Container(
                     decoration: BoxDecoration(
                         border: Border.all(color: Colors.pink, width: 6)),
                     width: 200, // Ensure the container has a width
                     height: 200, // Ensure the container has a height
-                    child: Image.asset("assets/fashion7.jpg"),
+                    child: Image.asset("assets/fashion4.jpg"),
                   ),
                 ),
 
@@ -51,13 +51,13 @@ class Option2Screen extends StatelessWidget {
                   onTap: () => Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => Option22Screen())),
+                          builder: (context) => Option222Screen())),
                   child: Container(
                     decoration: BoxDecoration(
                         border: Border.all(color: Colors.pink, width: 6)),
                     width: 200, // Ensure the container has a width
                     height: 200, // Ensure the container has a height
-                    child: Image.asset("assets/fashion8.jpg"),
+                    child: Image.asset("assets/fashion5.jpg"),
                   ),
                 ),
 

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:personality_quiz/chat/commonRoom.dart';
+import 'package:personality_quiz/quiz/quiz.dart';
 
 class MainScreen extends StatelessWidget {
   @override
@@ -29,10 +30,12 @@ class MainScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Image.network(
-                  getImagePath(index),
-                  fit: BoxFit.cover,
-                  height: 150,
+                Center(
+                  child: Image.network(
+                    getImagePath(index),
+                    fit: BoxFit.cover,
+                    height: 150,
+                  ),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -76,18 +79,48 @@ class MainScreen extends StatelessWidget {
       ),
       bottomNavigationBar: BottomAppBar(
         shape: CircularNotchedRectangle(),
-        color: const Color.fromARGB(255, 227, 138, 168),
+        color: const Color.fromRGBO(233, 30, 99, 1),
         notchMargin: 8.0,
         child: Container(
-          height: 60.0,
+          height: 20.0,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              ElevatedButton(
-                onPressed: () {
+              InkWell(
+                onTap: () {
                   _showDialog(context);
                 },
-                child: Text('Shop Together'),
+                child: Container(
+                    width: 130,
+                    height: 30,
+                    decoration: BoxDecoration(color: Colors.white),
+                    child: Center(
+                        child: Text(
+                      'Shop Together',
+                      style: TextStyle(
+                          color: Colors.pink, fontWeight: FontWeight.bold),
+                    ))),
+              ),
+              SizedBox(
+                width: 30,
+              ),
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => FashionPersonalityQuiz()));
+                },
+                child: Container(
+                    width: 130,
+                    height: 30,
+                    decoration: BoxDecoration(color: Colors.white),
+                    child: Center(
+                        child: Text(
+                      'Fshion Personality',
+                      style: TextStyle(
+                          color: Colors.pink, fontWeight: FontWeight.bold),
+                    ))),
               ),
             ],
           ),
