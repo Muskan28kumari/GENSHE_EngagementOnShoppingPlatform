@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:personality_quiz/chat/mainSceen.dart';
 import 'package:personality_quiz/option1/screen.dart';
 import 'package:personality_quiz/option2/screen.dart';
 
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      home: const MyHomePage(),
+      home: MainScreen(),
     );
   }
 }
